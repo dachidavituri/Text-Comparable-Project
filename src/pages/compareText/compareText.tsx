@@ -1,8 +1,8 @@
-export default function CompareText() {
+const CompareText: React.FC = () => {
   return (
     <div className="p-4">
       {/* Top controls */}
-      <div className="flex flex-col lg:flex-row items-start lg:items-center gap-4 mb-6">
+      <div className="flex flex-col md:flex-row items-start lg:items-center gap-4 mb-6">
         <select className="border rounded p-2">
           <option>ქართული</option>
           <option>English</option>
@@ -17,7 +17,7 @@ export default function CompareText() {
       </div>
 
       {/* Textareas */}
-      <div className="flex flex-col lg:flex-row items-center gap-4">
+      <div className="flex flex-col md:flex-row items-center gap-4">
         <textarea
           placeholder="დაწერე ტექსტი..."
           className="w-full lg:w-1/2 h-40 p-3 border rounded bg-blue-50 resize-none"
@@ -37,4 +37,6 @@ export default function CompareText() {
       </div>
     </div>
   );
-}
+};
+
+export default CompareText;

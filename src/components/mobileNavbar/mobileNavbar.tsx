@@ -1,11 +1,7 @@
 import { Menu, X } from "lucide-react";
+import type { Props } from "./index.types";
 
-interface Props {
-  menuOpen: boolean;
-  setMenuOpen: (value: boolean) => void;
-}
-
-export default function MobileNavbar({ menuOpen, setMenuOpen }: Props) {
+const MobileNavbar: React.FC<Props> = ({ menuOpen, setMenuOpen }) => {
   return (
     <div className="lg:hidden fixed top-0 left-0 right-0 bg-[#0a2b57] text-white flex items-center justify-between px-4 py-3 shadow-md z-50">
       <div className="flex items-center">
@@ -21,4 +17,6 @@ export default function MobileNavbar({ menuOpen, setMenuOpen }: Props) {
       </button>
     </div>
   );
-}
+};
+
+export default MobileNavbar;

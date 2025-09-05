@@ -1,3 +1,3 @@
-const pdfConvert = () => <div className="p-4">PDF კონვერტაცია გვერდი</div>;
+const pdfConvert: React.FC = () => <div className="font-bold text-blue-600 text-5xl">PDF კონვერტაცია გვერდი</div>;
 
 export default pdfConvert;

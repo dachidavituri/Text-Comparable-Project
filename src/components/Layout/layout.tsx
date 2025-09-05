@@ -1,9 +1,10 @@
 import { useState } from "react";
-import Sidebar from "../sidebar/sidebar";
-import MobileMenu from "../mobileMenu/mobileMenu";
-import MobileNavbar from "../mobileNavbar/mobileNavbar";
+import Sidebar from "&/sidebar";
+import MobileMenu from "&/mobileMenu";
+import MobileNavbar from "&/mobileNavbar";
+import type { LayoutProps } from "./index.types";
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+const Layout: React.FC<LayoutProps> = ({ children }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
@@ -12,9 +13,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <MobileNavbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       {menuOpen && <MobileMenu setMenuOpen={setMenuOpen} />}
 
-      <main className="flex-1 flex flex-col lg:ml-64 pt-16 lg:pt-0 px-4 lg:px-8">
+      <main className="flex-1 flex flex-col pt-16 lg:pt-0 px-4 lg:px-8 justify-center items-center">
         {children}
       </main>
     </div>
   );
-}
+};
+
+export default Layout;
